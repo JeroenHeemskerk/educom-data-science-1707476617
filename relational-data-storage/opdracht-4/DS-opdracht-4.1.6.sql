@@ -6,12 +6,14 @@
 
 --provincie beneden de grote rivieren, waar wordt in de data deze distinctie gemaakt?
 
+--takes precedence therefore ()
+
 SELECT 
     mhl_hitcount.hitcount, 
     mhl_suppliers.name,
     mhl_cities.name AS city_name, 
-    mhl_communes.name AS commune_name, 
-    mhl_districts.name AS district_name
+    mhl_communes.name AS gemeentenaam, 
+    mhl_districts.name AS provincie
 FROM 
     mhl_suppliers 
 INNER JOIN 
@@ -23,6 +25,6 @@ INNER JOIN
 INNER JOIN 
     mhl_hitcount ON mhl_suppliers.id = mhl_hitcount.supplier_id 
 WHERE 
-    (mhl_districts.name = "Limburg" OR mhl_districts.name = "Noord-Brabant" OR mhl_districts.name = "Zeeland") 
+    (mhl_districts.name = "Limburg" OR mhl_districts.name = "Noord-Brabant" OR mhl_districts.name = "Zeeland")
     AND mhl_hitcount.year = 2014 
     AND mhl_hitcount.month = 1;
