@@ -1,8 +1,6 @@
 -- Selecteer uit de hitcount-tabel per jaar het aantal records, de minimale, maximale, gemiddelde en totale hitcount.
 
 SELECT 
-    mhl_hitcount.year,
-    mhl_hitcount.month,
     COUNT(*),
     MIN(mhl_hitcount.hitcount),
     MAX(mhl_hitcount.hitcount),
@@ -11,9 +9,7 @@ SELECT
 FROM 
     mhl_hitcount
 GROUP BY
-    mhl_hitcount.year,
-    mhl_hitcount.month
+    mhl_hitcount.year
 ORDER BY
-    mhl_hitcount.year,
-    mhl_hitcount.month;
+    mhl_hitcount.year;
 
