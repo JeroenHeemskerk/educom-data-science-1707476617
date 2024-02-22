@@ -1,0 +1,1 @@
+-- Selecteer de totale hitcount per rubriek met 'Geen hits' als een rubriek geen hitcount kent.
